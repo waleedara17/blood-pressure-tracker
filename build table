@@ -1,0 +1,26 @@
+   const table = document.createElement("table");
+        const headerRow = document.createElement("tr");
+        headerRow.innerHTML = `
+          <th>ID</th>
+          <th>Date</th>
+          <th>Systolic</th>
+          <th>Diastolic</th>
+          <th>Pulse</th>
+          <th>Abnormal?</th>
+        `;
+        table.appendChild(headerRow);
+
+        measurements.forEach(m => {
+          const row = document.createElement("tr");
+
+          // Date formatting
+          const dateCell = new Date(m.measurement_date).toLocaleDateString();
+
+          row.innerHTML = `
+            <td>${m.id}</td>
+            <td>${dateCell}</td>
+            <td>${m.systolic}</td>
+            <td>${m.diastolic}</td>
+            <td>${m.pulse}</td>
+            <td>${m.abnormal ? "YES" : "NO"}</td>
+          `;
