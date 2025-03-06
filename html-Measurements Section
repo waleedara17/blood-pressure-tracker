@@ -1,0 +1,29 @@
+ <section class="box">
+    <h2>Add Measurement</h2>
+    <label for="measurementUserId">User ID:</label>
+    <input id="measurementUserId" type="number" placeholder="e.g. 1">
+    <label for="systolicInput">Systolic:</label>
+    <input id="systolicInput" type="number" placeholder="e.g. 120">
+    <label for="diastolicInput">Diastolic:</label>
+    <input id="diastolicInput" type="number" placeholder="e.g. 80">
+    <label for="pulseInput">Pulse:</label>
+    <input id="pulseInput" type="number" placeholder="e.g. 70">
+    <label for="measurementDate">Date (YYYY-MM-DD):</label>
+    <input id="measurementDate" type="date">
+    <button id="addMeasurementBtn">Add Measurement</button>
+    
+    <p id="measurementMsg" class="msg"></p>
+  </section>
+
+  <section class="box">
+    <h2>View Measurement History</h2>
+    <label for="historyUserId">User ID:</label>
+    <input id="historyUserId" type="number" placeholder="e.g. 1">
+    <label for="historyStart">Start (YYYY-MM-DD):</label>
+    <input id="historyStart" type="date">
+    <label for="historyEnd">End (YYYY-MM-DD):</label>
+    <input id="historyEnd" type="date">
+    <button id="historyBtn">Get History</button>
+
+    <div id="historyResults"></div>
+  </section>
