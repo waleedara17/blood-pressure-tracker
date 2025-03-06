@@ -1,0 +1,24 @@
+ const historyBtn = document.getElementById("historyBtn");
+  historyBtn.addEventListener("click", () => {
+    const userId = document.getElementById("historyUserId").value.trim();
+    const start = document.getElementById("historyStart").value;
+    const end = document.getElementById("historyEnd").value;
+
+    if (!userId || !start || !end) {
+      alert("Please fill in UserID, Start Date, and End Date.");
+      return;
+    }
+ // CORRECT: Use backticks
+fetch(`${BASE_URL}/summary/monthly?month=${monthValue}`)
+    
+      .then(res => res.json())
+      .then(data => {
+        const historyDiv = document.getElementById("historyResults");
+        historyDiv.innerHTML = "";
+
+        if (data.msg !== "ok") {
+          historyDiv.textContent = "Error retrieving measurements.";
+          return;
+        }
+        
+        const { averageSystolic, averageDiastolic, averagePulse, measurements } = data;
