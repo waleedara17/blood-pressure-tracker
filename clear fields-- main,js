@@ -1,0 +1,15 @@
+      document.getElementById("measurementUserId").value = "";
+          document.getElementById("systolicInput").value = "";
+          document.getElementById("diastolicInput").value = "";
+          document.getElementById("pulseInput").value = "";
+          document.getElementById("measurementDate").value = "";
+        } else {
+          document.getElementById("measurementMsg").textContent = "Error adding measurement";
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("measurementMsg").textContent = "Error adding measurement";
+      });
+  });
+
