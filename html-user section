@@ -1,0 +1,14 @@
+<section class="box">
+    <h2>Create User</h2>
+    <label for="userNameInput">Name:</label>
+    <input id="userNameInput" type="text" placeholder="Enter user name">
+    <button id="createUserBtn">Create User</button>
+    
+    <p id="createUserMsg" class="msg"></p>
+  </section>
+
+  <section class="box">
+    <h2>List Users</h2>
+    <button id="listUsersBtn">List Users</button>
+    <div id="usersList"></div>
+  </section>
