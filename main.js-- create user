@@ -1,0 +1,31 @@
+  const createUserBtn = document.getElementById("createUserBtn");
+  createUserBtn.addEventListener("click", () => {
+    const userNameInput = document.getElementById("userNameInput");
+    const userName = userNameInput.value.trim();
+    if (!userName) {
+      alert("Please enter a user name");
+      return;
+    }
+});
+
+    fetch(`${BASE_URL}/users/create`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: userName })
+      })
+      
+      .then(res => res.json())
+      .then(data => {
+        if (data.msg === "ok") {
+            document.getElementById("createUserMsg").textContent =
+            `User created with ID ${data.Last_Id}`;
+          
+        } else {
+          document.getElementById("createUserMsg").textContent = "Error creating user";
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("createUserMsg").textContent = "Error creating user";
+      });
+  });
