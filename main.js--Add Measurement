@@ -1,0 +1,31 @@
+ const addMeasurementBtn = document.getElementById("addMeasurementBtn");
+  addMeasurementBtn.addEventListener("click", () => {
+    const userId = document.getElementById("measurementUserId").value.trim();
+    const systolic = document.getElementById("systolicInput").value.trim();
+    const diastolic = document.getElementById("diastolicInput").value.trim();
+    const pulse = document.getElementById("pulseInput").value.trim();
+    const measurementDate = document.getElementById("measurementDate").value; // might be ""
+
+    if (!userId || !systolic || !diastolic || !pulse) {
+      alert("Please fill in all required fields (UserID, Systolic, Diastolic, Pulse).");
+      return;
+    }
+
+    const bodyData = {
+      userId: Number(userId),
+      systolic: Number(systolic),
+      diastolic: Number(diastolic),
+      pulse: Number(pulse),
+    };
+    if (measurementDate) {
+      bodyData.measurementDate = measurementDate;
+    }
+
+    fetch('${BASE_URL}'/measurements/add, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(bodyData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.msg === "ok") {
