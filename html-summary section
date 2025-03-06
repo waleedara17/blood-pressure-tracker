@@ -1,0 +1,12 @@
+  <section class="box">
+    <h2>Monthly Summary</h2>
+    <label for="summaryMonth">Month (YYYY-MM):</label>
+    <input id="summaryMonth" type="month">
+    <button id="summaryBtn">Get Summary</button>
+    
+    <div id="summaryResults"></div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
