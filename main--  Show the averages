@@ -1,0 +1,11 @@
+       const avgP = document.createElement("p");
+        avgP.textContent = `Avg Systolic: ${averageSystolic.toFixed(2)}, ` +
+                           `Avg Diastolic: ${averageDiastolic.toFixed(2)}, ` +
+                          `Avg Pulse: ${averagePulse.toFixed(2)}`;
+
+        historyDiv.appendChild(avgP);
+
+        if (!measurements || measurements.length === 0) {
+          historyDiv.appendChild(document.createTextNode("No measurements found in this range."));
+          return;
+        }
